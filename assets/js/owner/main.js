@@ -10,8 +10,9 @@ function iniciar() {
 }
 
 //codigo para avtivar el correo
+const codigo = "bWFpbHRvOmNvbnRhY3RvQHRwLWFib2dhZG9zLmNvbQ==";
 function openMailer(element) {
-	const mail = atob("bWFpbHRvOnZlbnRhc0BhbWF0aXN0YS1lbnZhc2VzLmNvbQ==");
+	const mail = atob(codigo);
 	element.setAttribute("href", mail);
 	element.setAttribute("onclick", "");
 };
