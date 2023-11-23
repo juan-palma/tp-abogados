@@ -312,6 +312,64 @@ div#whatsapp {
 
 
 
+/* ==========================================================================
+	Estilos visiales para WhatsApp chat
+========================================================================== */
+.idaAcordeon .box{
+	position: relative;
+}
+	.idaAcordeon .box .titulo {
+		position: relative;
+		background-color: #eee;
+		cursor: pointer;
+		padding: 18px;
+		width: 100%;
+		border: none;
+		text-align: left;
+		outline: none;
+		font-size: 15px;
+
+		-webkit-transition: all 0.3s ease-in-out;
+		-moz-transition: all 0.3s ease-in-out;
+		-o-transition: all 0.3s ease-in-out;
+		-ms-transition: all 0.3s ease-in-out;
+		transition: all 0.3s ease-in-out;
+	}
+	.idaAcordeon .box.activo .titulo,
+	.idaAcordeon .box .titulo:hover{
+		background-color: var(--colorPrincipal);
+	}
+		.idaAcordeon .box .infoAc{
+			width: 100%;
+			text-align: left;
+			font-size: clamp(1rem, 1vw + 1rem, 1.2rem);
+			max-height: 0px;
+			overflow: hidden;
+			opacity: 0;
+
+			/* -webkit-transition: height, max-height, opacity, 0.3s ease-in-out;
+			-moz-transition: height, max-height, opacity, 0.3s ease-in-out;
+			-o-transition: height, max-height, opacity, 0.3s ease-in-out;
+			-ms-transition: height, max-height, opacity, 0.3s ease-in-out;
+			transition: height, max-height, opacity, 0.3s, 0.3s, 2.3s ease-in-out; */
+			transition-property:  height, max-height, opacity;
+			transition-duration: 0.5s, 0.5s, 1s;
+			transition-timing-function: cubic-bezier(.7,-.01,.3,1);
+		}
+			.idaAcordeon .box h4.titulo {
+				font-size: clamp(18px, 1vw + 1.4rem , 22px);
+			}
+			.idaAcordeon .box .infoAc .boxInfoAcor{
+				width: 100%;
+				padding: 18px;
+				padding-left: 48px;
+			}
+		
+		.idaAcordeon .box.activo .infoAc{
+			opacity: 1;;
+		}
+
+
 
 
 
@@ -417,6 +475,7 @@ nav#menu {
 			}
 				div#menuMobileBox li {
 					width: auto;
+					font-family: 'Montserrat';
 					font-weight: 600;
 					font-size: clamp(22px, 6vw, 54px);
 					padding: 8px 4px 8px 24px;
@@ -615,9 +674,72 @@ div#empresa {
 								font-size: 120%;
 							}
 								#info article figcaption h3 {
+									font-size: clamp(18px, 1.4vw, 28px);
 									margin-bottom: 12px;
 									color: var(--colorPrincipal);
 								}
+			div#todos {
+				position: relative;
+				padding-top: 7vh;
+			}
+			div#todos > h3{
+				font-size: clamp(22px, 2.4vw, 38px);
+				margin-bottom: 2rem;
+			}
+				div#acordeonServicios {
+					display: flex;
+					flex-direction: column;
+					grid-gap: 24px;
+				}
+					.idaAcordeon .box h4.titulo {
+						font-size: clamp(18px, 1vw + 0.4rem , 22px);
+						font-weight: 700;
+						background-color: var(--colorSecundario);
+						padding-left: 66px;
+						padding-right: 28%;
+					}
+						.idaAcordeon .box h4.titulo::before{
+							content: "";
+							width: 20px;
+							height: 100%;
+							display: block;
+							position: absolute;
+							top: 0px;
+							left: 0px;
+							background-color: var(--colorPrincipal);
+
+							-webkit-transition: all 0.3s ease-in-out;
+							-moz-transition: all 0.3s ease-in-out;
+							-o-transition: all 0.3s ease-in-out;
+							-ms-transition: all 0.3s ease-in-out;
+							transition: all 0.3s ease-in-out;
+						}
+					.idaAcordeon .box.activo h4.titulo,
+					.idaAcordeon .box h4.titulo:hover{
+						color: #fff;
+					}
+						.idaAcordeon .box.activo h4.titulo::before,
+						.idaAcordeon .box h4.titulo:hover::before{
+							background-color: var(--colorBackColor);
+							width: 50px;
+						}
+					.idaAcordeon .box ul {
+						list-style: inside;
+						padding-left: 24px;
+					}
+				#imgBusto {
+					width: 72%;
+					position: absolute;
+					top: -1vh;
+					right: 0;
+					transform: translateX(56%);
+				}
+					#todos picture img {
+						width: 100%;
+						height: auto;
+					}
+
+
 				
 	div#columnaFondo {
 		display: block;
@@ -1059,6 +1181,27 @@ div#contacto .fondo {
 		}
 		div#redes .container div#redesBox {
 			margin-top: 20px;
+		}
+
+
+	.idaAcordeon .box h4.titulo {
+		padding-left: 36px;
+		padding-right: 24vw;
+	}
+		.idaAcordeon .box h4.titulo::before {
+			width: 12px;
+		}
+		.idaAcordeon .box.activo h4.titulo::before,
+		.idaAcordeon .box h4.titulo:hover::before {
+			width: 26px;
+		}
+
+	.idaAcordeon .box .infoAc .boxInfoAcor {
+		padding-left: 18px;
+	}
+		.idaAcordeon .box ul {
+			list-style: circle;
+			padding-left: 24px;
 		}
 }
 @media only screen and (min-width: 760px){
