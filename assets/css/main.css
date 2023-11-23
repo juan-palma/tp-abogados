@@ -18,6 +18,7 @@
 /* font-family: 'Cormorant Garamond', serif; */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,900;1,700&display=swap');
 
 
 html, body{
@@ -26,19 +27,19 @@ html, body{
 
 :root{
 	--colorBackDark: #1a1918;
-	--colorBackColor: #393735;
-	--colorPrincipal: #a34f29;
-	--colorSecundario: #3a434d;
+	--colorBackColor: #2c2a29;
+	--colorPrincipal: #e26c2e;
+	--colorSecundario: #ffd5c5;
 	--colorTexto: var(--colorBackColor);
 	--margenGlobal: 6vw;
 	--anchoContainer: calc(100vw - (var(--margenGlobal) * 2));
 }
 h1, h2, h3, h4, h5, h6{
-	font-family: 'Cormorant SC', serif;
+	font-family: 'Montserrat', serif;
 	font-weight: 900;
 }
 body, button, input, select, textarea, ::after, ::before{
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Alegreya', sans-serif;
 	font-weight: 400;
 	line-height: 1.24;
 	letter-spacing: 0.05em;
@@ -347,7 +348,7 @@ div#whatsapp {
 nav#menu {
     display: flex;
     justify-content: center;
-    background-color: white;
+    background-color: aliceblue;
     padding: 20px 0px;
 	position: fixed;
     top: 0px;
@@ -377,15 +378,16 @@ nav#menu {
 				}
 
 			ul#menuBox li {
+				font-family: 'Montserrat';
 				font-size: 120%;
-				font-weight: 500;
-				color: #862671;
+				font-weight: 600;
+				color: var(--colorBackColor);
 				cursor: pointer;
 
 				transition: all 200ms ease-in-out;
 			}
 			ul#menuBox li:hover{
-				color: crimson;
+				color: var(--colorPrincipal);
 			}
 
 			div#menuMobileBox {
@@ -394,7 +396,7 @@ nav#menu {
 				position: fixed;
 				top: 0px;
 				right: -80vw;
-				background-color: #852671;
+				background-color: var(--colorBackColor);
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
@@ -453,7 +455,8 @@ nav#menu {
 				}
 
 #inicio{
-	height: 74vh;
+	height: 80vh;
+	justify-content: flex-end;
 }
 	div#inicio .fondo {
 		overflow: hidden;
@@ -463,48 +466,52 @@ nav#menu {
 	}
 		div#inicio .fondo img {
 			width: 100%;
-			height: 130%;
+			height: 100%;
 			object-fit: cover;
 			object-position: top;
-			transform: translateY(12.121%)
 		}
 
 	div#inicio .container {
+		width: 60%;
 		display: flex;
 		justify-content: center;
 		position: relative;
-		top: -13vh;
 		align-items: center;
-		grid-gap: 40px;
+		grid-gap: 3vw;
+		color: white;
+		padding-top: 100px;
 	}
 		div#inicio .container .logo img {
 			height: 16vh;
 		}
 		div#slogan {
-			font-size: clamp(12px, 1.3vw, 40px);
+			font-size: clamp(12px, 1vw, 40px);
+			padding: 0px 3vw 1.8em 3vw;
+    		border-left: 1px solid #fff;
 		}
-			div#slogan h2 {
+			div#slogan h1 {
 				font-weight: 400;
 				font-family: 'Montserrat';
 			}
-			div#slogan span {
-				font-family: 'Cormorant SC';
-				font-size: 163%;
-				font-weight: 900;
+			div#slogan p {
+				font-size: 150%;
+    			font-weight: 400;
 			}
 @media screen and (orientation:portrait){
 	#inicio{
-		height: 48vh;
+		height: 78vh;
 	}
-		div#inicio .fondo img {
-			width: 100%;
-			height: 132%;
-			object-fit: cover;
-			object-position: top;
-			transform: translateY(12.121%);
-		}
 	div#inicio .container {
-		top: -6vh;
+		width: 80%;
+		flex-direction: column;
+		text-align: center;
+	}
+	div#slogan {
+		border-left: 0px none transparent;
+		border-top: 1px solid #fff;
+		width: 82%;
+		margin: 0px;
+		margin-top: 21px;
 	}
 		
 }
@@ -524,33 +531,30 @@ nav#menu {
 	
 
 div#empresa {
-    background-color: white;
+	position: relative;
+    background-color: var(--colorPrincipal);
 }
 	div#empresa .container {
-		padding-bottom: 8vh;
+		padding: 9vh 10% 9vh 0px;
 		display: flex;
 		justify-content: center;
 	}
 		#textoEmpresa {
-			background-color: #fff1f5b5;
-			padding: 70px;
-			width: 68%;
-			max-width: 700px;
-			border-radius: 43px;
+			width: 80%;
+			max-width: 1260px;
+			padding: 2vh 2vw;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
-			text-align: center;
-			align-items: center;
-			box-shadow: 4px 10px 26px #0003;
-			transform: translateY(-46px);
+			align-items: flex-start;
+			color: white;
 		}
 			#textoEmpresa h2 {
 				font-size: clamp(28px, 2.4vw, 48px);
 				margin-bottom: 25px;
 			}
 			#textoEmpresa p {
-				color: #862671;
+				font-size: clamp(20px, 1.3vw, 38px);
 			}
 
 
@@ -558,145 +562,81 @@ div#empresa {
 			flex-direction: column;
 			align-items: center;
 			background-color: white;
-			padding-bottom: 12vh
+			padding: 12vh 0px;
 		}
 			div#servicios .container {
-				display: flex;
-				text-align: center;
-				justify-content: center;
+				display: grid;
+				text-align: left;
+				max-width: 860px;
 			}
-			div#servicios .container h2 {
-				font-size: clamp(28px, 2.4vw, 48px);
-				margin-bottom: 25px;
-			}
-			div#articulosBox {
-				position: relative;
-				width: 100%;
-				display: flex;
-				justify-content: space-between;
-				align-items: stretch;
-			}
-				div#articulosBox article {
-					position: relative;
-					flex: 1 1 33.333%;
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					aspect-ratio: 1;
-					overflow: hidden;
-					cursor: pointer;
+				div#servicios .container h2 {
+					font-size: clamp(28px, 2.4vw, 48px);
+					margin-bottom: 25px;
 				}
+				div#info {
+					width: 100%;
+					position: relative;
+					display: grid;
+					grid: 'g p'
+						'f f';
+					grid-gap: 40px;
+					grid-template-columns: 1fr 1fr;
+				}
+					div#articulosBox article {
+						position: relative;
+						flex: 1 1 33.333%;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						aspect-ratio: 1;
+						overflow: hidden;
+						cursor: pointer;
+					}
+						article#servGeneral {
+							grid-area: g;
+						}
+						article#servPatrimonio {
+							grid-area: p;
+						}
+						article#servFamiliar {
+							grid-area: f;
+						}
+							#info article img {
+								width: 100%;
+								height: auto;
+								aspect-ratio: 1;
+								object-fit: cover;
+							}
+							article#servFamiliar img {
+								aspect-ratio: 2/1;
+							}
+							#info article figcaption {
+								margin-top: 26px;
+								font-size: 120%;
+							}
+								#info article figcaption h3 {
+									margin-bottom: 12px;
+									color: var(--colorPrincipal);
+								}
+				
+	div#columnaFondo {
+		display: block;
+		position: absolute;
+		height: 100%;
+		width: clamp(130px, 20vw, 600px);
+		top: 0px;
+		right: 0vw;
+		z-index: 0;
+	}
+		div#columnaFondo img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: left top;
+		}
 				
 				
 
-/*---------------*/
-/***** Milo *****/
-/*---------------*/
-
-figure.effect-milo {
-    background: #2a0320;
-    width: 100%;
-    height: 100%;
-    flex: 1 1 100%;
-}
-
-figure.effect-milo img {
-	/* width: -webkit-calc(100% + 60px);
-	width: calc(100% + 60px); */
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	object-fit: cover;
-	object-position: center;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	opacity: 0.3;
-	backface-visibility: hidden;
-	
-	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-	transition: opacity 0.35s, transform 0.35s;
-	-webkit-transform: translate3d(0px,0,0) scale(1.12);
-	transform: translate3d(0px,0,0) scale(1.12);
-}
-
-figure.effect-milo:hover img {
-	opacity: 1;
-	-webkit-transform: translate3d(0,0,0) scale(1);
-	transform: translate3d(0,0,0) scale(1);
-}
-
-figure.effect-milo h3 {
-	font-family: 'Montserrat';
-    font-weight: 500;
-    font-size: clamp(28px, 3vw, 50px);
-    color: white;
-	opacity: 1;
-
-	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-	transition: opacity 0.35s, transform 0.35s;
-	-webkit-transform: translate3d(-40px,0,0);
-
-	-webkit-transform: translate3d(0,0,0) scale(1);
-	transform: translate3d(0,0,0) scale(1);
-}
-figure.effect-milo:hover h3{
-	opacity: 0;
-	-webkit-transform: translate3d(0,0,0) scale(2);
-	transform: translate3d(0,0,0) scale(2);
-}
-
-figure.effect-milo p {
-    position: absolute;
-    text-align: right;
-    width: auto;
-    height: 16%;
-    right: 0px;
-    bottom: 0px;
-    background-color: rgb(50, 7, 52);
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 6%;
-    color: antiquewhite;
-	opacity: 0;
-	cursor: pointer;
-
-	-webkit-transition: all 0.35s, -webkit-transform 0.35s;
-	transition: all 0.35s, transform 0.35s;
-	-webkit-transform: translate3d(-40px,0,0);
-	transform: translate3d(-40px,0,0);
-}
-/* figure.effect-milo p {
-	padding: 0 10px 0 0;
-	width: 50%;
-	border-right: 1px solid #fff;
-	text-align: right;
-	opacity: 0;
-	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-	transition: opacity 0.35s, transform 0.35s;
-	-webkit-transform: translate3d(-40px,0,0);
-	transform: translate3d(-40px,0,0); 
-}*/
-
-figure.effect-milo:hover p {
-	opacity: 1;
-	-webkit-transform: translate3d(0,0,0);
-	transform: translate3d(0,0,0);
-}
-figure.effect-milo p:hover{
-	color: #ddaa01;
-}
-
-div#articulosBox article figcaption {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10%;
-}
 
 
 
@@ -744,6 +684,7 @@ div#contacto .fondo {
 			font-size: 120%;
 		}
 		#contacto span {
+			font-family: 'Montserrat';
 			font-size: clamp(14px, 5vw, 34px);
 			cursor: pointer;
 
@@ -751,7 +692,7 @@ div#contacto .fondo {
 			transition: color 0.35s, transform 0.35s;
 		}
 		#contacto span:hover{
-			color: #c522a2;
+			color: var(--colorPrincipal);
 		}
 		
 
@@ -765,7 +706,7 @@ div#contacto .fondo {
 
 	div#redes {
 		width: 100%;
-		background-color: #862671;
+		background-color: var(--colorBackColor);
 		padding: 8vh;
 		align-items: center;
 	}
@@ -1161,10 +1102,6 @@ div#contacto .fondo {
 			height: 28px;
 		}
 
-	div#textoEmpresa {
-		width: 96%;
-		padding: 60px;
-	}
 
 	div#articulosBox {
 		flex-direction: column;
@@ -1175,6 +1112,16 @@ div#contacto .fondo {
 			min-width: 100%;
 			max-width: 100%;
 		}
+
+	div#info {
+		grid: 'g'
+			'p'
+			'f';
+		grid-template-columns: 1fr;
+	}
+	article#servFamiliar img {
+		aspect-ratio: 1;
+	}
 }
 
 
@@ -1216,8 +1163,12 @@ div#contacto .fondo {
 	div#slogan {
 		text-align: center;
 	}
-	div#inicio .container .logo {
-		display: none;
+
+	div#slogan h1 {
+		font-size: 1.6em;
+	}
+	div#slogan p {
+		font-size: 120%;
 	}
 }
 
